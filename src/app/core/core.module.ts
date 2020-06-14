@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './layouts/header/header.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { BlankLayoutComponent } from './layouts/blank-layout/blank-layout.component';
 
 const COMMON_COMPONENTS = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  MainLayoutComponent,
+  BlankLayoutComponent
 ];
 
 
@@ -14,9 +19,10 @@ const COMMON_COMPONENTS = [
     ...COMMON_COMPONENTS
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([])
   ],
-  exports:[
+  exports: [
     ...COMMON_COMPONENTS
   ],
   providers: []
